@@ -15,7 +15,7 @@ for line in cFile:
             jar.set(data[5], data[6], domain=data[0], path=data[2])
 
 
-def check_course_status(course_id='win10divDERIVED_REGFRM1_SSR_STATUS_LONG$1'):
+def check_course_status(course_id=properties.COURSE_ID):
     """
     Query Albert to check if course is available
     :param course_id:
