@@ -26,7 +26,7 @@ def check_course_status(course_id='win10divDERIVED_REGFRM1_SSR_STATUS_LONG$1'):
     resp = requests.get(url, cookies=jar)
     soup = BeautifulSoup(resp.text, 'html.parser')
     status = soup.find(id=course_id).find('img').attrs['alt']
-    print(status)
+    # print(status)
     if status != 'Closed':
         message = f"The course you're looking for is currently {status}"
         email_me(message)
