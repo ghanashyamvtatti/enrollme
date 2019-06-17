@@ -4,6 +4,7 @@ import smtplib
 import re
 import properties
 import time
+import traceback
 
 jar = requests.cookies.RequestsCookieJar()
 
@@ -43,5 +44,9 @@ def email_me(message):
 
 if __name__ == '__main__':
     while True:
-        check_course_status()
-        time.sleep(30)
+        try:
+            check_course_status()
+            time.sleep(30)
+        except:
+            message = "An error occurred during the execution. Error: " + traceback.format_exc()
+            email_me(message)
